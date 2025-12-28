@@ -1,4 +1,3 @@
-# Furt606-bet-
 index.html
 <!DOCTYPE html>
 <html lang="pt-BR">
