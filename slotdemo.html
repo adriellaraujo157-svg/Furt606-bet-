@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Slot Demo</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body {
+  margin: 0;
+  background: #000;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+header {
+  padding: 10px;
+  background: #111;
+}
+
+button {
+  padding: 15px 30px;
+  font-size: 18px;
+  background: #00c853;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+#slot {
+  font-size: 60px;
+  margin-top: 40px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <a href="jogos.html" style="color:#00c853;text-decoration:none;">⬅ Voltar</a>
+  <h2>🎰 Slot Demo</h2>
+</header>
+
+<div id="slot">🍒 🍒 🍒</div>
+
+<button onclick="girar()">GIRAR</button>
+
+<p id="resultado"></p>
+
+<script>
+function girar() {
+  const simbolos = ["🍒", "🍋", "⭐", "💎", "🔔"];
+  const s1 = simbolos[Math.floor(Math.random() * simbolos.length)];
+  const s2 = simbolos[Math.floor(Math.random() * simbolos.length)];
+  const s3 = simbolos[Math.floor(Math.random() * simbolos.length)];
+
+  document.getElementById("slot").innerHTML = `${s1} ${s2} ${s3}`;
+
+  if (s1 === s2 && s2 === s3) {
+    document.getElementById("resultado").innerText = "🎉 Você ganhou!";
+  } else {
+    document.getElementById("resultado").innerText = "❌ Tente novamente";
+  }
+}
+</script>
+
+<p style="font-size:12px;color:#aaa;margin-top:30px;">
+  +18 | Apenas entretenimento | Demo
+</p>
+
+</body>
+</html>
